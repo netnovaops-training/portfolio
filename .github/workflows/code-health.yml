@@ -20,7 +20,9 @@ concurrency:
 
 jobs:
   health:
-    uses: netnovaops-training/Toolbox/.github/workflows/shared-code-health.yml@8f279258c31976c696b8503efd9d1e2579aece74 # main
+    # Pinned to the Toolbox commit that adds osv-scanner --allow-no-lockfiles: this repo has no
+    # lock file, so the old pin left a "No lockfiles found" warning on every run (2026-11-19).
+    uses: netnovaops-training/Toolbox/.github/workflows/shared-code-health.yml@5f96936a968720e2d36701c71ba129734d13f385 # main (Toolbox fix/github-findings-2026-11-19)
     permissions:
       contents: read
       actions: read

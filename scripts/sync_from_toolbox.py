@@ -37,7 +37,7 @@ def clean_body(text):
     text = text.replace("\r\n", "\n")
     if text.startswith("---\n"):
         text = text[text.find("\n---\n", 3) + 5:]
-    text = re.sub(r"<!--.*?-->\n?", "", text, flags=re.S)
+    text = re.sub(r"<!--.*?-->\n?", "", text, flags=re.DOTALL)
     text = re.sub(r"\A\s*# [^\n]*\n", "", text)
     return text.strip() + "\n"
 
